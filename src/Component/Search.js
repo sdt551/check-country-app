@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Form, InputGroup } from "react-bootstrap";
 
 function Search({ onSearch }) {
@@ -6,10 +6,11 @@ function Search({ onSearch }) {
 
   const handleChange = (e) => {
     setSearchText(e.target.value);
-  };
-  useEffect(() => {
     onSearch(searchText);
-  }, [searchText]);
+  };
+  // useEffect(() => {
+  //   onSearch(searchText);
+  // }, [searchText]);
   return (
     <div className="d-flex justify-content-center">
       <InputGroup size="md" className="mb-3 w-50 ">
